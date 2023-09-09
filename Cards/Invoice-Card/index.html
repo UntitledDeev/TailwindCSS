@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Ticket | Untitled Dev | Ebraj Grg.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main
+      class="px-5 w-full min-h-[100vh] bg-black flex items-center justify-center"
+    >
+      <div
+        class="bg-gradient-to-tr from-blue-700 to-blue-800 text-white rounded-2xl space-y-5 max-w-[400px] w-[100%] md:w-[450px] divide-y-2 divide-dashed"
+      >
+        <!-- Top Part -->
+        <div class="divide-y divide-blue-500">
+          <!-- 1st Part  -->
+          <div class="text-center space-y-2 p-5">
+            <h1 class="text-2xl">Invoice</h1>
+            <p>By Untitled Dev.</p>
+            <h1 class="text-3xl font-black">15,000 USD</h1>
+          </div>
+          <!-- 2nd part -->
+          <div class="p-5 space-y-5">
+            <p>Transaction Details</p>
+            <div class="flex items-center justify-between space-x-5">
+              <p class="text-blue-400">Date</p>
+              <p>Saturday, Aug 9 2023</p>
+            </div>
+            <div class="flex items-center justify-between space-x-5">
+              <p class="text-blue-400">Time1</p>
+              <p>Saturday, Aug 9 2023</p>
+            </div>
+            <div class="flex items-center justify-between space-x-5">
+              <p class="text-blue-400">Date</p>
+              <p>Saturday, Aug 9 2023</p>
+            </div>
+            <div class="flex items-center justify-between space-x-5">
+              <p class="text-blue-400">Date</p>
+              <p>Saturday, Aug 9 2023</p>
+            </div>
+            <div class="flex items-center justify-between space-x-5">
+              <p class="text-blue-400">Visa - Debit</p>
+              <p>**** 0000</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Part -->
+        <div
+          class="p-5 flex space-x-4 justify-center relative before:content-[''] before:absolute before:top-0 before:left-0 before:translate-x-[-50%] before:translate-y-[-50%] before:block before:w-[50px] before:rounded-full before:h-[50px] before:bg-black after:content-[''] after:absolute after:top-0 after:left-[100%] after:translate-x-[-50%] after:translate-y-[-50%] after:block after:w-[50px] after:rounded-full after:h-[50px] after:bg-black"
+        >
+          <div class="h-[100px] rounded-md p-2 bg-white">
+            <img
+              class="border-2 border-gray-400 object-cover rounded-lg w-full h-full"
+              src="./images/qr-code.png"
+              alt="QR code | Untitled dev"
+            />
+          </div>
+          <div class="flex-1 space-y-1">
+            <button
+              class="bg-white w-full p-2 py-3 rounded-lg text-gray-900 font-bold"
+            >
+              Split Bill
+            </button>
+            <button class="border-2 w-full p-2 py-3 rounded-lg text-gray-100">
+              Get PDF
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
