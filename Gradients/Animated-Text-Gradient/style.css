@@ -1,0 +1,35 @@
+@font-face {
+  font-family: UntitledDev;
+  src: url(./fonts/ClashDisplay-Bold.ttf);
+}
+
+body {
+  font-family: UntitledDev;
+}
+
+.custom-animated-text {
+  background: linear-gradient(-45deg, #aaee52, #3ce7de, #bf48e7, #e63682);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient 5s linear infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 25% 25%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 75% 75%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
