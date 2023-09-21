@@ -10,9 +10,3 @@ customBox.forEach((singleBox) => {
     customBoxSibling.classList.add("active");
   });
 });
-
-// if (customBoxContent.classList.contains("active")) {
-//   customBoxContent.classList.remove("active");
-// } else {
-//   customBoxContent.classList.add("active");
-// }
