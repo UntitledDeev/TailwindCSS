@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab#1 | Untitled Dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .custom-tab-link {
+          @apply cursor-pointer;
+        }
+        .custom-tab-link.active {
+          @apply bg-gray-900 text-white rounded-full shadow-sm transition-opacity ease-in-out;
+        }
+        .custom-tab-content {
+          @apply opacity-0 h-[0px] translate-y-[10%] overflow-hidden;
+        }
+        .custom-tab-link img {
+          filter: invert(1);
+        }
+        .custom-tab-link.active img {
+          filter: invert(0);
+        }
+        .custom-tab-content.active {
+          @apply opacity-100 h-[100%] translate-y-[0%] shadow-md border-dashed border-slate-200 bg-white p-4 md:p-3;
+          transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+      }
+    </style>
+  </head>
+  <body class="relative bg-gradient-to-r from-violet-500 to-violet-700">
+    <main
+      class="px-5 w-full min-h-[100vh] flex md:items-center justify-center max-w-[1200px] mx-auto py-32 md:py-10"
+    >
+      <div class="w-full">
+        <!-- Tab Section -->
+        <div
+          class="bg-white p-1 rounded-full border w-[max-content] mx-auto inline-block grid grid-cols-3 items-center text-center"
+        >
+          <div
+            class="py-2.5 px-4 custom-tab-link flex items-center justify-center space-x-2 active"
+          >
+            <img src="./images/icons/design.svg" alt="" />
+            <span class="hidden md:inline-block">UI / UX Design</span>
+          </div>
+          <div
+            class="py-2.5 px-4 custom-tab-link flex items-center justify-center space-x-2"
+          >
+            <img src="./images/icons/coding.svg" alt="" />
+            <span class="hidden md:inline-block">Web Development</span>
+          </div>
+          <div
+            class="py-2.5 px-4 custom-tab-link flex items-center justify-center space-x-2"
+          >
+            <img src="./images/icons/marketing.svg" alt="" />
+            <span class="hidden md:inline-block">Marketing Stuffs</span>
+          </div>
+        </div>
+
+        <div class="pt-5">
+          <!-- 1st Tab Content -->
+          <div
+            class="rounded-2xl max-w-[900px] mx-auto custom-tab-content active"
+          >
+            <div
+              class="flex flex-col md:flex-row items-center justify-center space-y-5 md:space-y-0 md:space-x-5"
+              id="tab-1-content"
+            >
+              <div class="h-[280px] w-full rounded-lg overflow-hidden">
+                <img
+                  src="./images/designing.gif"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div class="space-y-5">
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-black">UI / UX Designing.</h1>
+                  <p>
+                    Crafting intuitive, user-centered interfaces for exceptional
+                    digital experiences that maximize usability and engagement.
+                  </p>
+                </div>
+                <a
+                  href="https://www.instagram.com/untitleddev25/"
+                  target="_blank"
+                  class="border-b-2 border-violet-600 flex items-center space-x-1 font-bold hover:scale-105 transition-transform ease-in-out duration-300 w-[max-content]"
+                >
+                  <span>Know More</span>
+                  <img src="./images/icons/arrow.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 2nd Tab Content -->
+          <div class="rounded-2xl max-w-[900px] mx-auto custom-tab-content">
+            <div
+              class="flex flex-col md:flex-row items-center justify-center space-y-5 md:space-y-0 md:space-x-5"
+            >
+              <div class="h-[280px] w-full rounded-lg overflow-hidden">
+                <img
+                  src="./images/coding.gif"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div class="space-y-5">
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-black">Web Development.</h1>
+                  <p>
+                    Building responsive, scalable websites and web applications
+                    with cutting-edge technology to drive online success.
+                  </p>
+                </div>
+                <a
+                  href="https://www.instagram.com/untitleddev25/"
+                  target="_blank"
+                  class="border-b-2 border-violet-600 flex items-center space-x-1 font-bold hover:scale-105 transition-transform ease-in-out duration-300 w-[max-content]"
+                >
+                  <span>Know More</span>
+                  <img src="./images/icons/arrow.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- 3rd Tab Content -->
+          <div class="rounded-2xl max-w-[900px] mx-auto custom-tab-content">
+            <div
+              class="flex flex-col md:flex-row items-center justify-center space-y-5 md:space-y-0 md:space-x-5"
+            >
+              <div class="h-[280px] w-full rounded-lg overflow-hidden">
+                <img
+                  src="./images/marketing.gif"
+                  class="w-full h-full object-cover"
+                  alt=""
+                />
+              </div>
+              <div class="space-y-5">
+                <div class="space-y-2">
+                  <h1 class="text-2xl font-black">Marketing Stuffs.</h1>
+                  <p>
+                    Strategic digital marketing solutions, including SEO, social
+                    media, and content strategies, to boost brand visibility and
+                    reach target audiences effectively.
+                  </p>
+                </div>
+                <a
+                  href="https://www.instagram.com/untitleddev25/"
+                  target="_blank"
+                  class="border-b-2 border-violet-600 flex items-center space-x-1 font-bold hover:scale-105 transition-transform ease-in-out duration-300 w-[max-content]"
+                >
+                  <span>Know More</span>
+                  <img src="./images/icons/arrow.svg" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="absolute bottom-0 w-full text-center bg-violet-900 py-1.5 text-sm text-violet-400"
+    >
+      Built using HTML, CSS, TailwindCSS & JS.
+      <a
+        href="https://www.instagram.com/untitleddev25/"
+        target="_blank"
+        class="font-bold text-white underline"
+        >Untitled Dev 👻</a
+      >.
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
