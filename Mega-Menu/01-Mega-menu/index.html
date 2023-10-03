@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untitled Dev | Mega Menu #01</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .nav-item:hover {
+          @apply font-bold transition-all;
+        }
+        .mega-menu-content,
+        .mega-menu-mobile-content {
+          @apply opacity-0 h-[0px] -translate-y-[0%] overflow-hidden border-none;
+        }
+        .mega-menu-content.active,
+        .mega-menu-mobile-content.active {
+          @apply bg-white opacity-100 h-auto translate-y-[0%] border-dashed border-slate-200 overflow-y-auto;
+          transition: opacity 0.5s ease-in-out, transform 0.35s ease-in-out;
+        }
+        .mega-menu-icon.active,
+        .mega-menu-mobile-icon.active {
+          @apply transform rotate-180;
+        }
+        .mega-menu-title.active {
+          @apply font-bold;
+        }
+        .hamburger-content {
+          @apply opacity-0 h-[0px] -translate-y-[15%] overflow-hidden;
+        }
+        .hamburger-content.active {
+          @apply bg-white opacity-100 min-h-full h-full translate-y-[0%] border-dashed border-slate-200 overflow-y-auto;
+          transition: opacity 0.5s ease-in-out, transform 0.35s ease-in-out;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-tr from-blue-700 to-blue-800 min-h-[200vh]">
+    <nav
+      class="bg-white py-4 lg:py-0 px-5 fixed w-full z-[1000] border-b-2 border-dashed border-slate-200"
+    >
+      <div
+        class="max-w-[1250px] mx-auto flex items-center justify-between space-x-2"
+      >
+        <!-- Logo -->
+        <img
+          src="./images/ud-logo.jpg"
+          alt="Untitled Dev."
+          class="h-[45px] rounded-md"
+        />
+
+        <!-- Lists -->
+        <ul
+          class="hidden lg:block lg:flex space-x-8 items-center justify-center"
+        >
+          <li class="nav-item">
+            <a href="#" class="inline-block">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="inline-block">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="inline-block">Resources</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="inline-block">Blogs</a>
+          </li>
+          <li class="mega-menu select-none h-full py-6 hover:font-bold">
+            <div
+              class="inline-block flex items-center justify-center space-x-1"
+            >
+              <span class="mega-menu-title">Our Products</span>
+              <!-- Dropdown Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mega-menu-icon"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="inline-block">Contact</a>
+          </li>
+          <li
+            class="bg-slate-900 px-8 text-white py-2 rounded-md hover:scale-105 transition-all"
+          >
+            <a href="#" class="inline-block">Login</a>
+          </li>
+        </ul>
+
+        <!-- Hamburger -->
+        <div class="block lg:hidden cursor-pointer hamburger">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hamburger-bar"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="hamburger-cross hidden"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dropdown Item-->
+
+      <!-- 1st  -->
+      <section
+        class="mega-menu-content absolute top-[100%] left-0 w-full px-5 border-t-2 border-slate-200 z-[-1000] hidden lg:block"
+      >
+        <div
+          class="max-w-[1250px] mx-auto flex items-center justify-between space-x-2"
+        >
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1.5fr_1.5fr] w-full divide-x-2 divide-dashed"
+          >
+            <!-- 1st Section -->
+            <div class="space-y-3 py-10 pr-5">
+              <h2 class="font-bold text-lg">Various Products</h2>
+              <p>
+                Discover a range of tailored financial products with Untitled
+                Dev. From design to development, we have your needs covered.
+              </p>
+              <button class="px-8 py-2.5 rounded-md border border-slate-400">
+                Get Started
+              </button>
+            </div>
+
+            <!-- 2nd Section -->
+            <ul class="space-y-8 py-10 px-5">
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img
+                    src="./images/icons/fire.png"
+                    alt="Fire | Untitled Dev."
+                  />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">PixelPerfect Pro</h2>
+                  <p>
+                    Achieve pixel-perfect designs with this precision-focused
+                    design tool.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img
+                    src="./images/icons/mouse.png"
+                    alt="Fire | Untitled Dev."
+                  />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">CodeCraft Studio</h2>
+                  <p>
+                    Streamline web development with our powerful, intuitive
+                    coding environment.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img
+                    src="./images/icons/heart.png"
+                    alt="Fire | Untitled Dev."
+                  />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">DesignFlow Plus</h2>
+                  <p>
+                    Boost creativity and collaboration with our seamless design
+                    workflow platform
+                  </p>
+                </div>
+              </li>
+            </ul>
+            <!-- 3rd Section -->
+            <ul class="space-y-8 py-10 pl-5">
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img
+                    src="./images/icons/flower.png"
+                    alt="Fire | Untitled Dev."
+                  />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">WebWiz Pro</h2>
+                  <p>
+                    Effortlessly create stunning websites with our user-friendly
+                    web builder
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img src="./images/icons/chart.png" alt="Untitled Dev." />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">DevOpsHub</h2>
+                  <p>
+                    Empower teams with a centralized hub for seamless DevOps
+                    collaboration
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-center justify-center space-x-3">
+                <div>
+                  <img
+                    src="./images/icons/creat-edit.png"
+                    alt="Untitled Dev."
+                  />
+                </div>
+                <div class="space-y-1">
+                  <h2 class="font-bold">UI/UX Analyzer</h2>
+                  <p>
+                    Optimize user experiences with insightful UI/UX analytics
+                    and recommendations
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </nav>
+
+    <!-- Mobile Responsive -->
+    <section
+      class="flex fixed top-0 w-full z-[100] lg:hidden hamburger-content"
+    >
+      <div class="w-full h-full">
+        <ul
+          class="min-h-full flex flex-col space-y-8 justify-center px-5 bg-white w-full py-32 md:py-28"
+        >
+          <li>
+            <a href="#" class="inline-block">Home</a>
+          </li>
+          <li>
+            <a href="#" class="inline-block">About</a>
+          </li>
+          <li>
+            <a href="#" class="inline-block">Resources</a>
+          </li>
+          <li>
+            <a href="#" class="inline-block">Blogs</a>
+          </li>
+          <li class="mega-menu-mobile">
+            <a
+              href="#"
+              class="inline-block flex items-center justify-between space-x-1"
+            >
+              <span>Our Products</span>
+              <!-- Dropdown Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="mega-menu-mobile-icon"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </a>
+
+            <div class="mega-menu-mobile-content">
+              <ul
+                class="space-y-8 py-5 px-5 border-2 rounded-md border-dashed border-slate-200 mt-5"
+              >
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/fire.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">PixelPerfect Pro</h2>
+                    <p>
+                      Achieve pixel-perfect designs with this precision-focused
+                      design tool.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/mouse.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">CodeCraft Studio</h2>
+                    <p>
+                      Streamline web development with our powerful, intuitive
+                      coding environment.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/heart.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">DesignFlow Plus</h2>
+                    <p>
+                      Boost creativity and collaboration with our seamless
+                      design workflow platform
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/fire.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">PixelPerfect Pro</h2>
+                    <p>
+                      Achieve pixel-perfect designs with this precision-focused
+                      design tool.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/mouse.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">CodeCraft Studio</h2>
+                    <p>
+                      Streamline web development with our powerful, intuitive
+                      coding environment.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <div>
+                    <img
+                      src="./images/icons/heart.png"
+                      alt="Fire | Untitled Dev."
+                    />
+                  </div>
+                  <div class="space-y-1">
+                    <h2 class="font-bold">DesignFlow Plus</h2>
+                    <p>
+                      Boost creativity and collaboration with our seamless
+                      design workflow platform
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <!-- <li class="mega-menu-mobile-content"></li> -->
+          <li>
+            <a href="#" class="inline-block">Contact</a>
+          </li>
+          <li
+            class="bg-slate-900 px-16 text-white py-3 rounded-md hover:scale-105 transition-all w-max"
+          >
+            <a href="#" class="inline-block">Login</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <h1
+      class="text-5xl font-black py-[12rem] text-blue-900 opacity-60 text-center leading-tight"
+    >
+      Mega Menu <br />Untitled Dev. 🔥
+    </h1>
+
+    <footer
+      class="fixed bottom-0 w-full text-center bg-blue-950 py-1.5 text-sm text-blue-400"
+    >
+      Built using HTML, CSS, TailwindCSS & JS.
+      <a
+        href="https://www.instagram.com/untitleddev25/"
+        target="_blank"
+        class="font-bold text-white underline"
+        >Untitled Dev 👻</a
+      >.
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
